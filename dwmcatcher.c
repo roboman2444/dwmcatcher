@@ -31,7 +31,7 @@ int main(const int argc, char * const *argv){
 	int lastret = 0;
 	if(argc < 2){
 		//hacky way of doing this
-		char *c[] = {"killall", "dwmcatcher", "-q", "-USR1"};
+		char *c[] = {"killall", "dwmcatcher", "-q", "-USR1", (char*) NULL};
 		execvp(*c, c);
 		return 0;
 	}
