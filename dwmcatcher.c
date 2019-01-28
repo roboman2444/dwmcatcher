@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
-#include <errno.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -33,9 +32,7 @@ int main(const int argc, char * const *argv){
 	if(argc < 2){
 		//hacky way of doing this
 		char *c[] = {"killall", "dwmcatcher", "-q", "-USR1", (char*) NULL};
-		int ret = execvp(*c, c);
-    printf("%d\n", ret);
-    perror("execvp failed with error: ");
+		execvp(*c, c);
 		return 0;
 	}
 	if(
